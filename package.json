@@ -1,0 +1,23 @@
+{
+  "name": "weather-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AiaRup/weatherReact.git"
+  },
+  "keywords": [],
+  "author": "Aia Rupsom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AiaRup/weatherReact/issues"
+  },
+  "homepage": "https://github.com/AiaRup/weatherReact#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
