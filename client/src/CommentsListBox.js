@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import CommentBox from './CommentBox';
 
-class CommentsListBox extends Component {
-  render() {
-    return (
-      <div>
+const CommentsListBox = ({ comments, indexPost, deleteComment }) => {
+  console.log(comments);
 
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      {comments.map((comment, index) => <CommentBox key={index} index={index} indexPost={indexPost} deleteComment={deleteComment} comment={comment}/>
+      )}
+    </div>
+  );
+};
+
 
 export default CommentsListBox;
