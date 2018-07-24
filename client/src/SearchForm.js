@@ -18,6 +18,7 @@ class SearchForm extends Component {
 
     axios.get(url)
       .then(({ data }) => {
+        console.log(data);
         let structure = {
           name: data.location.name,
           country: data.location.country,

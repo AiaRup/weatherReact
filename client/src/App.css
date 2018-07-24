@@ -50,11 +50,11 @@ html {
   color: rgba(255, 0, 0, 0.7);
   cursor: pointer;
 }
-
+/*
 .pin-item:hover {
   color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
-}
+} */
 
 .media-heading {
   display: flex;

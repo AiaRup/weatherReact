@@ -13,7 +13,6 @@ const WeatherBox = props => {
         <h4 className="media-heading">{props.item.name}, {props.item.country}
           <div className="icons">
             <i className="fa fa-trash-o remove-item" onClick={handleDeletePost}></i>
-            <i className="fa fa-thumb-tack pin-item"></i>
           </div>
         </h4>
         <p>{props.item.feelslike_c} &#x2103; / {props.item.feelslike_f} &#x2109;
