@@ -13,6 +13,7 @@ let citySchema = new Schema({
   feelslike_c: Number,
   feelslike_f: Number,
   text: String,
+  humidity:Number,
   comments: [commentSchema]
 });
 

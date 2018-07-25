@@ -17,7 +17,7 @@ const WeatherBox = props => {
         </h4>
         <p>{props.item.feelslike_c} &#x2103; / {props.item.feelslike_f} &#x2109;
           <img src={props.item.icon} alt={props.item.name} className="media-object" style={{ width: 60 }}/>
-          {props.item.text}</p>
+          {props.item.text}-  <i className="fa fa-tint"> {props.item.humidity}%</i></p>
       </div>
       <CommentForm indexOfPost={props.index} addComment={props.addComment} />
       <CommentsListBox comments={props.item.comments} indexPost={props.index} deleteComment={props.deleteComment}/>
