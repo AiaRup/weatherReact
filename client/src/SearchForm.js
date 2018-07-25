@@ -14,11 +14,8 @@ class SearchForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const url = `http://api.apixu.com/v1/current.json?key=9e1eb59b80a94ee59dc95108182107&q=${this.state.city}`;
-
-    axios.get(url)
+    axios.get(`/search/${this.state.city}`)
       .then(({ data }) => {
-        console.log(data);
         let structure = {
           name: data.location.name,
           country: data.location.country,
@@ -38,6 +35,31 @@ class SearchForm extends Component {
         console.log('Error fetching and parsing data', error);
         this.setState({ cityFound: false });
       });
+
+    // const url = `http://api.apixu.com/v1/current.json?key=9e1eb59b80a94ee59dc95108182107&q=${this.state.city}`;
+
+    // axios.get(url)
+    //   .then(({ data }) => {
+    //     console.log(data);
+    //     let structure = {
+    //       name: data.location.name,
+    //       country: data.location.country,
+    //       icon: data.current.condition.icon,
+    //       feelslike_c: data.current.feelslike_c,
+    //       feelslike_f: data.current.feelslike_f,
+    //       text: data.current.condition.text,
+    //       comments: []
+    //     };
+
+    //     this.props.onSubmitSearchForm(structure);
+    //     this.setState({
+    //       city: '',
+    //       cityFound: true });
+    //   })
+    //   .catch(error => {
+    //     console.log('Error fetching and parsing data', error);
+    //     this.setState({ cityFound: false });
+    //   });
   }
 
   render() {

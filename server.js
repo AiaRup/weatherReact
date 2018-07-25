@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const ObjectID = require('mongodb').ObjectID;
+const request = require('request');
+
 
 mongoose.Promise = global.Promise;
 
@@ -21,6 +23,16 @@ app.use(express.static('node_modules'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+// make the api request
+app.get('/search/:city', (req, res) => {
+  const url = `http://api.apixu.com/v1/current.json?key=9e1eb59b80a94ee59dc95108182107&q=${req.params.city}`;
+  request(url, (error, response, body) => {
+    console.log('error:', error); // Print the error if one occurred
+    console.log('statusCode:', response && response.statusCode);
+    res.send(body);
+  });
+});
 
 // 1) to handle getting all posts and their comments, handle add post
 app.route('/cities')

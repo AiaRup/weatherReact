@@ -12,11 +12,11 @@ class App extends Component {
     };
   }
 
-  getAllPosts = () => {
+  componentDidMount = () => {
     axios.get('/cities')
       .then((posts) => {
         this.setState({
-          cities: posts.data
+          cities: posts.data.reverse() // to get the latest post first
         });
       })
       .catch(function (error) {
@@ -36,7 +36,6 @@ class App extends Component {
         console.log(error);
       });
   }
-
 
   deletePost = (indexToRemove) => {
     const postId = this.state.cities[indexToRemove]._id;
@@ -91,10 +90,7 @@ class App extends Component {
       });
   }
 
-
-
   render() {
-    this.getAllPosts();
     return (
       <div className="container">
         <div className="page-header">
@@ -108,3 +104,4 @@ class App extends Component {
 }
 
 export default App;
+
